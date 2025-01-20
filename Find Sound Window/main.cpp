@@ -3,8 +3,11 @@
 
 #include <iostream>
 
+import active_audio_process_finder;
+
 int main()
 {
-	return;
+	auto audioProcManager = ActiveAudioProcessFinder();
+	std::cout << audioProcManager.GetActiveAudioProcessId();
 }
 
