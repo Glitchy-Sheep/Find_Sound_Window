@@ -4,10 +4,14 @@
 #include <iostream>
 
 import active_audio_process_finder;
+import focus_window_manager;
 
 int main()
 {
 	auto audioProcManager = ActiveAudioProcessFinder();
-	std::cout << audioProcManager.GetActiveAudioProcessId();
+	auto activeAudioProcessId = audioProcManager.GetActiveAudioProcessId();
+	std::cout << "Active audio process ID: " << activeAudioProcessId << std::endl;
+
+	FocusMainProcessWindow(activeAudioProcessId);
 }
 
